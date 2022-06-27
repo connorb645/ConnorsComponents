@@ -8,7 +8,7 @@
 import SwiftUI
 
 @available(iOS 14.0, *)
-public struct BackgroundView<Content: View>: View {
+public struct CCBackgroundView<Content: View>: View {
     @ViewBuilder var content: Content
     public var body: some View {
         ZStack {
@@ -20,9 +20,9 @@ public struct BackgroundView<Content: View>: View {
 }
 
 @available(iOS 14.0, *)
-struct BackgroundView_Previews: PreviewProvider {
+struct CCBackgroundView_Previews: PreviewProvider {
     static var previews: some View {
-        BackgroundView() {
+        CCBackgroundView() {
             Text("Content Preview")
         }
     }
