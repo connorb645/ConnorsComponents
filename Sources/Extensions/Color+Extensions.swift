@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-@available(iOS 13.0, *)
+@available(iOS 14.0, *)
 public extension Color {
     static let background = Color("Background")
     static let backgroundOffset = Color("BackgroundOffset")
