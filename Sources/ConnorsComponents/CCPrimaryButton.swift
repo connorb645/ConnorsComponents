@@ -10,11 +10,25 @@ import SwiftUI
 @available(iOS 14.0, *)
 public struct CCPrimaryButton: View {
     let title: String
-    var textColor: Color = Color.white
-    var backgroundColor: Color = Color.primary
-    var cornerRadius: Double = 5.0
-    var height: Double = 50
+    let textColor: Color
+    let backgroundColor: Color
+    let cornerRadius: Double
+    let height: Double
     let onTap: () -> Void
+    
+    public init(title: String,
+                textColor: Color = Color.white,
+                backgroundColor: Color = Color.primary,
+                cornerRadius: Double = 5.0,
+                height: Double = 50,
+                onTap: @escaping () -> Void) {
+        self.title = title
+        self.textColor = textColor
+        self.backgroundColor = backgroundColor
+        self.cornerRadius = cornerRadius
+        self.height = height
+        self.onTap = onTap
+    }
     
     public var body: some View {
         Button {

@@ -9,7 +9,12 @@ import SwiftUI
 
 @available(iOS 14.0, *)
 public struct CCBackgroundView<Content: View>: View {
-    @ViewBuilder public var content: Content
+    @ViewBuilder var content: Content
+    
+    public init(@ViewBuilder content: () -> Content) {
+        self.content = content()
+    }
+    
     public var body: some View {
         ZStack {
             Color.background.ignoresSafeArea()

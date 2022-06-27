@@ -10,12 +10,28 @@ import SwiftUI
 @available(iOS 15.0, *)
 public struct CCIconButton: View {
     let iconName: String
-    var size: Double = 35
-    var cornerRadius: Double = 10
-    var foregroundColor: Color = .black
-    var backgroundColor: Color = .gray.opacity(0.2)
-    var isEnabled: Bool = true
+    let size: Double
+    let cornerRadius: Double
+    let foregroundColor: Color
+    let backgroundColor: Color
+    let isEnabled: Bool
     let action: () -> ()
+    
+    public init(iconName: String,
+                  size: Double = 35,
+                  cornerRadius: Double = 10,
+                  foregroundColor: Color = .black,
+                  backgroundColor: Color = .gray.opacity(0.2),
+                  isEnabled: Bool = true,
+                  action: @escaping () -> ()) {
+        self.iconName = iconName
+        self.size = size
+        self.cornerRadius = cornerRadius
+        self.foregroundColor = foregroundColor
+        self.backgroundColor = backgroundColor
+        self.isEnabled = isEnabled
+        self.action = action
+    }
     
     public var body: some View {
         Button {

@@ -16,6 +16,23 @@ public struct CCTextField: View {
     var backgroundColor: Color = Color.backgroundOffset
     var cornerRadius: Double = 5
     var height: Double = 50
+    
+    public init(text: Binding<String>,
+                placeholder: String,
+                padding: Padding = Padding.small,
+                foregroundColor: Color = Color.font,
+                backgroundColor: Color = Color.backgroundOffset,
+                cornerRadius: Double = 5,
+                height: Double = 50) {
+        self._text = text
+        self.placeholder = placeholder
+        self.padding = padding
+        self.foregroundColor = foregroundColor
+        self.backgroundColor = backgroundColor
+        self.cornerRadius = cornerRadius
+        self.height = height
+    }
+    
     public var body: some View {
         TextField(placeholder, text: $text)
             .frame(height: height)

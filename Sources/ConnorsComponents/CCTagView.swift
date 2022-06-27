@@ -33,14 +33,24 @@ public struct Tag: Identifiable, Hashable {
 @available(iOS 14.0, *)
 public struct CCTagView: View {
     let tags: [Tag]
-    var font: UIFont = UIFont.systemFont(ofSize: 14)
-    var padding: CGFloat = Padding.small.rawValue
-    var margin: CGFloat = Padding.small.rawValue
+    let font: UIFont
+    let padding: Padding
+    let margin: Padding
+    
+    public init(tags: [Tag],
+                font: UIFont = UIFont.systemFont(ofSize: 14),
+                padding: Padding = Padding.small,
+                margin: Padding = Padding.small) {
+        self.tags = tags
+        self.font = font
+        self.padding = padding
+        self.margin = margin
+    }
     
     public var body: some View {
-        LazyVStack(alignment: .leading, spacing: margin) {
+        LazyVStack(alignment: .leading, spacing: margin.rawValue) {
             ForEach(rows(availableWidth: UIScreen.main.bounds.width)) { tagRow in
-                LazyHStack(spacing: margin) {
+                LazyHStack(spacing: margin.rawValue) {
                     ForEach(tagRow.tags) { tag in
                         tagView(text: tag.text,
                                 isComplete: tag.isComplete)
@@ -57,7 +67,7 @@ public struct CCTagView: View {
             .strikethrough(isComplete, color: .white)
             .font(Font(uiFont: font))
             .foregroundColor(isComplete ? .white : Color.font)
-            .padding(padding)
+            .padding(padding.rawValue)
             .background(RoundedRectangle(cornerRadius: 5)
                             .fill(isComplete ? Color.primary : Color.backgroundOffset))
     }
@@ -68,9 +78,9 @@ public struct CCTagView: View {
         var currentRow: [Tag] = []
         tags.enumerated().forEach { i, tag in
             let taggableItem = tag
-            let itemPaddingWidth = padding * 2
+            let itemPaddingWidth = padding.rawValue * 2
             let width = taggableItem.size(using: font).width + itemPaddingWidth
-            let totalMarginWidth = CGFloat((tags.count - 1)) * margin
+            let totalMarginWidth = CGFloat((tags.count - 1)) * margin.rawValue
             let currentRowWidth = currentRow.reduce(0.0) { $0 + $1.size(using: font).width } + totalMarginWidth
             
             if currentRowWidth + width > availableWidth {

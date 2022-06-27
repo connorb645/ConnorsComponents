@@ -11,12 +11,30 @@ import SwiftUI
 public struct CCPasswordTextField: View {
     @Binding var password: String
     let isSecure: Bool
-    var placeholder: String = "Password"
-    var padding: Padding = Padding.small
-    var foregroundColor: Color = Color.font
-    var backgroundColor: Color = Color.backgroundOffset
-    var cornerRadius: Double = 5
-    var height: Double = 50
+    let placeholder: String
+    let padding: Padding
+    let foregroundColor: Color
+    let backgroundColor: Color
+    let cornerRadius: Double
+    let height: Double
+    
+    public init(password: Binding<String>,
+                  isSecure: Bool,
+                  placeholder: String = "Password",
+                  padding: Padding = Padding.small,
+                  foregroundColor: Color = Color.font,
+                  backgroundColor: Color = Color.backgroundOffset,
+                  cornerRadius: Double = 5,
+                  height: Double = 50) {
+        self._password = password
+        self.isSecure = isSecure
+        self.placeholder = placeholder
+        self.padding = padding
+        self.foregroundColor = foregroundColor
+        self.backgroundColor = backgroundColor
+        self.cornerRadius = cornerRadius
+        self.height = height
+    }
     
     public var body: some View {
         ZStack {
