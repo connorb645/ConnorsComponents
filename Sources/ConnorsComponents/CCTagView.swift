@@ -23,6 +23,12 @@ public struct Tag: Identifiable, Hashable {
     public let text: String
     public let isComplete: Bool
     
+    public init(text: String,
+                isComplete: Bool) {
+        self.text = text
+        self.isComplete = isComplete
+    }
+    
     fileprivate func size(using font: UIFont) -> CGSize {
         let attributes = [NSAttributedString.Key.font: font]
         let size = (self.text as NSString).size(withAttributes: attributes)
