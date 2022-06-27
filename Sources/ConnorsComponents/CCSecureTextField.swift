@@ -11,9 +11,9 @@ import SwiftUI
 public struct CCSecureTextField: View {
     @Binding var text: String
     let placeholder: String
-    var background: Color = Color.backgroundOffset
     var padding: Padding = Padding.small
     var foregroundColor: Color = .font
+    var backgroundColor: Color = Color.backgroundOffset
     var cornerRadius: Double = 5.0
     var height: Double = 50
     
@@ -21,7 +21,7 @@ public struct CCSecureTextField: View {
         SecureField(placeholder, text: $text)
             .frame(height: height)
             .padding(.horizontal, padding.rawValue)
-            .background(background)
+            .background(backgroundColor)
             .foregroundColor(foregroundColor)
             .cornerRadius(cornerRadius)
     }

@@ -12,9 +12,9 @@ public struct CCPasswordTextField: View {
     @Binding var password: String
     let isSecure: Bool
     var placeholder: String = "Password"
-    var background: Color = Color.backgroundOffset
     var padding: Padding = Padding.small
     var foregroundColor: Color = Color.font
+    var backgroundColor: Color = Color.backgroundOffset
     var cornerRadius: Double = 5
     var height: Double = 50
     
@@ -23,18 +23,18 @@ public struct CCPasswordTextField: View {
             if isSecure {
                 CCSecureTextField(text: $password,
                                   placeholder: placeholder,
-                                  background: background,
                                   padding: padding,
                                   foregroundColor: foregroundColor,
+                                  backgroundColor: backgroundColor,
                                   cornerRadius: cornerRadius,
                                   height: height)
                     .textInputAutocapitalization(.never)
             } else {
                 CCTextField(text: $password,
                             placeholder: placeholder,
-                            background: background,
                             padding: padding,
                             foregroundColor: foregroundColor,
+                            backgroundColor: backgroundColor,
                             cornerRadius: cornerRadius,
                             height: height)
                     .textInputAutocapitalization(.never)
