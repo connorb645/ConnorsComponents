@@ -10,7 +10,7 @@ import SwiftUI
 @available(iOS 14.0, *)
 public struct CCBackgroundView<Content: View>: View {
     @ViewBuilder var content: Content
-    let backgroundColor: Color // was .background
+    let backgroundColor: Color
     
     public init(backgroundColor: Color = .white,
                 @ViewBuilder content: () -> Content) {

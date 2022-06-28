@@ -13,8 +13,8 @@ public struct CCPasswordTextField: View {
     let isSecure: Bool
     let placeholder: String
     let padding: Padding
-    let foregroundColor: Color // was .font
-    let backgroundColor: Color // was .backgroundOffset
+    let foregroundColor: Color
+    let backgroundColor: Color
     let cornerRadius: Double
     let height: Double
     

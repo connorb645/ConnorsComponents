@@ -42,11 +42,11 @@ public struct CCTagView: View {
     let font: UIFont
     let padding: Padding
     let margin: Padding
-    let strikethroughColor: Color // white
-    let tagForegroundSelectedColor: Color // .white
-    let tagForegroundUnselectedColor: Color // .font
-    let tagBackgroundSelectedColor: Color // .primary
-    let tagBackgroundUnselectedColor: Color // .backgroundOffset
+    let strikethroughColor: Color
+    let tagForegroundSelectedColor: Color
+    let tagForegroundUnselectedColor: Color
+    let tagBackgroundSelectedColor: Color
+    let tagBackgroundUnselectedColor: Color
     
     public init(tags: [Tag],
                 font: UIFont = UIFont.systemFont(ofSize: 14),

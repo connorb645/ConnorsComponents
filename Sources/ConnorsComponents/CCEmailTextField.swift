@@ -12,8 +12,8 @@ public struct CCEmailTextField: View {
     @Binding var emailAddress: String
     let placeholder: String
     let padding: Padding
-    let foregroundColor: Color // was .font
-    let backgroundColor: Color // was .backgroundOffset
+    let foregroundColor: Color
+    let backgroundColor: Color
     let cornerRadius: Double
     let height: Double
     

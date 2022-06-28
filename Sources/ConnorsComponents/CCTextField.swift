@@ -12,8 +12,8 @@ public struct CCTextField: View {
     @Binding var text: String
     let placeholder: String
     let padding: Padding
-    let foregroundColor: Color // .font
-    let backgroundColor: Color // .backgroundOffset
+    let foregroundColor: Color
+    let backgroundColor: Color
     let cornerRadius: Double
     let height: Double
     
