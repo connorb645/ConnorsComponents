@@ -12,16 +12,16 @@ public struct CCSecureTextField: View {
     @Binding var text: String
     let placeholder: String
     let padding: Padding
-    let foregroundColor: Color
-    let backgroundColor: Color
+    let foregroundColor: Color // was .font
+    let backgroundColor: Color // was .backgroundOffset
     let cornerRadius: Double
     let height: Double
     
     internal init(text: Binding<String>,
                   placeholder: String,
                   padding: Padding = Padding.small,
-                  foregroundColor: Color = .font,
-                  backgroundColor: Color = Color.backgroundOffset,
+                  foregroundColor: Color = .black,
+                  backgroundColor: Color = .gray,
                   cornerRadius: Double = 5.0,
                   height: Double = 50) {
         self._text = text

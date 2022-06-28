@@ -9,7 +9,6 @@ import SwiftUI
 
 @available(iOS 14.0, *)
 public struct CCProgressView: View {
-    
     let size: Double
     let cornerRadius: Double
     let foregroundColor: Color
@@ -17,8 +16,8 @@ public struct CCProgressView: View {
         
     public init(size: Double = 50.0,
                 cornerRadius: Double = 5.0,
-                foregroundColor: Color = Color.white,
-                backgroundColor: Color = Color.primary) {
+                foregroundColor: Color = .white,
+                backgroundColor: Color = .pink) {
         self.size = size
         self.cornerRadius = cornerRadius
         self.foregroundColor = foregroundColor

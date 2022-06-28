@@ -17,8 +17,8 @@ public struct CCPrimaryButton: View {
     let onTap: () -> Void
     
     public init(title: String,
-                textColor: Color = Color.white,
-                backgroundColor: Color = Color.primary,
+                textColor: Color = .white,
+                backgroundColor: Color = .pink,
                 cornerRadius: Double = 5.0,
                 height: Double = 50,
                 onTap: @escaping () -> Void) {

@@ -11,17 +11,17 @@ import SwiftUI
 public struct CCTextField: View {
     @Binding var text: String
     let placeholder: String
-    var padding: Padding = Padding.small
-    var foregroundColor: Color = Color.font
-    var backgroundColor: Color = Color.backgroundOffset
-    var cornerRadius: Double = 5
-    var height: Double = 50
+    let padding: Padding
+    let foregroundColor: Color // .font
+    let backgroundColor: Color // .backgroundOffset
+    let cornerRadius: Double
+    let height: Double
     
     public init(text: Binding<String>,
                 placeholder: String,
                 padding: Padding = Padding.small,
-                foregroundColor: Color = Color.font,
-                backgroundColor: Color = Color.backgroundOffset,
+                foregroundColor: Color = .black,
+                backgroundColor: Color = .gray,
                 cornerRadius: Double = 5,
                 height: Double = 50) {
         self._text = text

@@ -12,18 +12,18 @@ public struct CCEmailTextField: View {
     @Binding var emailAddress: String
     let placeholder: String
     let padding: Padding
-    let foregroundColor: Color
-    let backgroundColor: Color
+    let foregroundColor: Color // was .font
+    let backgroundColor: Color // was .backgroundOffset
     let cornerRadius: Double
     let height: Double
     
     public init(emailAddress: Binding<String>,
-                  placeholder: String = "Email Address",
-                  padding: Padding = Padding.small,
-                  foregroundColor: Color = Color.font,
-                  backgroundColor: Color = Color.backgroundOffset,
-                  cornerRadius: Double = 5,
-                  height: Double = 50) {
+                placeholder: String = "Email Address",
+                padding: Padding = Padding.small,
+                foregroundColor: Color = .black,
+                backgroundColor: Color = .gray,
+                cornerRadius: Double = 5,
+                height: Double = 50) {
         self._emailAddress = emailAddress
         self.placeholder = placeholder
         self.padding = padding

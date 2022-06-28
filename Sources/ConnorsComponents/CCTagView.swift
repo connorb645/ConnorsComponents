@@ -42,15 +42,30 @@ public struct CCTagView: View {
     let font: UIFont
     let padding: Padding
     let margin: Padding
+    let strikethroughColor: Color // white
+    let tagForegroundSelectedColor: Color // .white
+    let tagForegroundUnselectedColor: Color // .font
+    let tagBackgroundSelectedColor: Color // .primary
+    let tagBackgroundUnselectedColor: Color // .backgroundOffset
     
     public init(tags: [Tag],
                 font: UIFont = UIFont.systemFont(ofSize: 14),
                 padding: Padding = Padding.small,
-                margin: Padding = Padding.small) {
+                margin: Padding = Padding.small,
+                strikethroughColor: Color = .white,
+                tagForegroundSelectedColor: Color = .white,
+                tagForegroundUnselectedColor: Color = .black,
+                tagBackgroundSelectedColor: Color = .pink,
+                tagBackgroundUnselectedColor: Color = .gray) {
         self.tags = tags
         self.font = font
         self.padding = padding
         self.margin = margin
+        self.strikethroughColor = strikethroughColor
+        self.tagForegroundSelectedColor = tagForegroundSelectedColor
+        self.tagForegroundUnselectedColor = tagForegroundUnselectedColor
+        self.tagBackgroundSelectedColor = tagBackgroundSelectedColor
+        self.tagBackgroundUnselectedColor = tagBackgroundUnselectedColor
     }
     
     public var body: some View {
@@ -70,12 +85,12 @@ public struct CCTagView: View {
         
     @ViewBuilder private func tagView(text: String, isComplete: Bool) -> some View {
         Text(text)
-            .strikethrough(isComplete, color: .white)
+            .strikethrough(isComplete, color: strikethroughColor)
             .font(Font(uiFont: font))
-            .foregroundColor(isComplete ? .white : Color.font)
+            .foregroundColor(isComplete ? tagForegroundSelectedColor : tagForegroundUnselectedColor)
             .padding(padding.rawValue)
             .background(RoundedRectangle(cornerRadius: 5)
-                            .fill(isComplete ? Color.primary : Color.backgroundOffset))
+                            .fill(isComplete ? tagBackgroundSelectedColor : tagBackgroundUnselectedColor))
     }
     
     private func rows(availableWidth: Double) -> [TagRow] {

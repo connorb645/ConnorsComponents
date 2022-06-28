@@ -13,8 +13,8 @@ public struct CCPasswordTextField: View {
     let isSecure: Bool
     let placeholder: String
     let padding: Padding
-    let foregroundColor: Color
-    let backgroundColor: Color
+    let foregroundColor: Color // was .font
+    let backgroundColor: Color // was .backgroundOffset
     let cornerRadius: Double
     let height: Double
     
@@ -22,8 +22,8 @@ public struct CCPasswordTextField: View {
                   isSecure: Bool,
                   placeholder: String = "Password",
                   padding: Padding = Padding.small,
-                  foregroundColor: Color = Color.font,
-                  backgroundColor: Color = Color.backgroundOffset,
+                  foregroundColor: Color = .black,
+                backgroundColor: Color = .gray,
                   cornerRadius: Double = 5,
                   height: Double = 50) {
         self._password = password
