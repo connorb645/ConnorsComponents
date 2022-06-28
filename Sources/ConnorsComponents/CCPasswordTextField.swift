@@ -19,13 +19,13 @@ public struct CCPasswordTextField: View {
     let height: Double
     
     public init(password: Binding<String>,
-                  isSecure: Bool,
-                  placeholder: String = "Password",
-                  padding: Padding = Padding.small,
-                  foregroundColor: Color = .black,
+                isSecure: Bool,
+                placeholder: String = "Password",
+                padding: Padding = Padding.small,
+                foregroundColor: Color = .black,
                 backgroundColor: Color = .gray,
-                  cornerRadius: Double = 5,
-                  height: Double = 50) {
+                cornerRadius: Double = 5,
+                height: Double = 50) {
         self._password = password
         self.isSecure = isSecure
         self.placeholder = placeholder
