@@ -52,6 +52,7 @@ public struct CCPrimaryButton: View {
         }
         .frame(maxWidth: .infinity)
         .frame(height: height)
+        .disabled(isLoading)
     }
 }
 
