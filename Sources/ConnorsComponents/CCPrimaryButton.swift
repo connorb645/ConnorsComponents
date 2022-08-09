@@ -15,18 +15,21 @@ public struct CCPrimaryButton: View {
     let cornerRadius: Double
     let height: Double
     let onTap: (() -> Void)?
+    let isLoading: Bool
     
     public init(title: String,
                 textColor: Color = .white,
                 backgroundColor: Color = .pink,
                 cornerRadius: Double = 5.0,
                 height: Double = 50,
+                isLoading: Bool = false,
                 onTap: (() -> Void)?) {
         self.title = title
         self.textColor = textColor
         self.backgroundColor = backgroundColor
         self.cornerRadius = cornerRadius
         self.height = height
+        self.isLoading = isLoading
         self.onTap = onTap
     }
     
@@ -35,12 +38,17 @@ public struct CCPrimaryButton: View {
             onTap?()
         } label: {
             ZStack {
-                RoundedRectangle(cornerRadius: cornerRadius)
-                    .fill(backgroundColor)
-                
-                Text(title)
-                    .foregroundColor(textColor)
+                if isLoading {
+                    CCProgressView()
+                } else {
+                    RoundedRectangle(cornerRadius: cornerRadius)
+                        .fill(backgroundColor)
+                    
+                    Text(title)
+                        .foregroundColor(textColor)
+                }
             }
+            .animation(.easeInOut, value: self.isLoading)
         }
         .frame(maxWidth: .infinity)
         .frame(height: height)
@@ -50,7 +58,7 @@ public struct CCPrimaryButton: View {
 @available(iOS 14.0, *)
 struct CCPrimaryButton_Previews: PreviewProvider {
     static var previews: some View {
-        CCPrimaryButton(title: "Button Title") {
+        CCPrimaryButton(title: "Button Title", isLoading: false) {
             print("Button Tapped")
         }
     }
